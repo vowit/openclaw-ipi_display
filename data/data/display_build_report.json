@@ -1,0 +1,15 @@
+{
+  "input_file": "data\\data\\demo_cases.json",
+  "output_file": "data\\data\\demo_cases_display.json",
+  "report_file": "data\\data\\display_build_report.json",
+  "generated_at": "2026-07-15T04:32:27.808016+00:00",
+  "case_count": 5,
+  "step_count": 87,
+  "fallback_action_count": 21,
+  "fallback_observation_count": 40,
+  "injection_step_count": 5,
+  "goal_reached_step_count": 5,
+  "processor": "display_v1",
+  "copied_to_public": true,
+  "failed_cases": []
+}

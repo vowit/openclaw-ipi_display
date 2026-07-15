@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Replay Showcase</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="background-grid" aria-hidden="true"></div>
+    <header class="hero glass-panel">
+      <div class="hero-copy">
+        <p class="eyebrow">OpenClaw Attack Replay</p>
+        <h1>Main Execution Flow Explorer</h1>
+        <p class="hero-text">
+          A single-page interactive replay for five OpenClaw cases. Compare task context,
+          injected instructions, attack goals, state shifts, and the exact files the agent touched.
+        </p>
+      </div>
+      <div class="hero-metrics" id="heroMetrics"></div>
+    </header>
+
+    <main class="workspace">
+      <aside class="sidebar glass-panel">
+        <div class="sidebar-head">
+          <div>
+            <p class="eyebrow">Case Selection</p>
+            <h2>Replay Cases</h2>
+          </div>
+          <label class="filter-label" for="goalFilter">Goal class</label>
+          <select id="goalFilter" class="filter-select">
+            <option value="all">All goals</option>
+          </select>
+        </div>
+        <div id="caseList" class="case-list" aria-live="polite"></div>
+      </aside>
+
+      <section class="main-stage">
+        <section class="flow glass-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Replay Flow</p>
+              <h2>Live Stage</h2>
+            </div>
+            <div class="step-switcher">
+              <button id="autoPlayToggle" class="nav-button" type="button">Auto Play</button>
+              <button id="prevStep" class="nav-button" type="button">Previous</button>
+              <span id="stepCounter" class="step-counter"></span>
+              <button id="nextStep" class="nav-button" type="button">Next</button>
+            </div>
+          </div>
+          <div id="milestoneRail" class="milestone-rail"></div>
+          <div id="timeline" class="timeline"></div>
+        </section>
+        <section class="brief glass-panel" id="briefPanel"></section>
+      </section>
+
+      <aside class="inspector">
+        <section class="glass-panel detail-panel" id="nodePanel"></section>
+        <section class="glass-panel detail-panel" id="transitionPanel"></section>
+        <section class="glass-panel detail-panel" id="filesPanel"></section>
+      </aside>
+    </main>
+  </div>
+
+  <template id="caseCardTemplate">
+    <button class="case-card" type="button">
+      <span class="case-status-dot"></span>
+      <div class="case-meta">
+        <p class="case-title"></p>
+        <p class="case-subtitle"></p>
+      </div>
+      <div class="case-badges"></div>
+    </button>
+  </template>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
